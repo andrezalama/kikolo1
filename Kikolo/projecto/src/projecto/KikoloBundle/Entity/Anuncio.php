@@ -1,0 +1,141 @@
+<?php
+
+namespace projecto\KikoloBundle\Entity;
+
+/**
+ * Anuncio
+ */
+class Anuncio
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $titulo;
+
+    /**
+     * @var string
+     */
+    private $descricao;
+
+    /**
+     * @var \DateTime
+     */
+    private $datacriacao;
+
+    /**
+     * @var int
+     */
+    private $tempo;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titulo
+     *
+     * @param string $titulo
+     *
+     * @return Anuncio
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get titulo
+     *
+     * @return string
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * Set descricao
+     *
+     * @param string $descricao
+     *
+     * @return Anuncio
+     */
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get descricao
+     *
+     * @return string
+     */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * Set datacriacao
+     *
+     * @param \DateTime $datacriacao
+     *
+     * @return Anuncio
+     */
+    public function setDatacriacao($datacriacao)
+    {
+        $this->datacriacao = $datacriacao;
+
+        return $this;
+    }
+
+    /**
+     * Get datacriacao
+     *
+     * @return \DateTime
+     */
+    public function getDatacriacao()
+    {
+        return $this->datacriacao;
+    }
+
+    /**
+     * Set tempo
+     *
+     * @param integer $tempo
+     *
+     * @return Anuncio
+     */
+    public function setTempo($tempo)
+    {
+        $this->tempo = $tempo;
+
+        return $this;
+    }
+
+    /**
+     * Get tempo
+     *
+     * @return int
+     */
+    public function getTempo()
+    {
+        return $this->tempo;
+    }
+}

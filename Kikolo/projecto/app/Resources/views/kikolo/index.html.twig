@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Kikolo list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Categoria</th>
+                <th>Descricao</th>
+                <th>Imagem</th>
+                <th>Localizacao</th>
+                <th>Nomeusuario</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Data</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kikolo in kikolos %}
+            <tr>
+                <td><a href="{{ path('kikolo_show', { 'id': kikolo.id }) }}">{{ kikolo.id }}</a></td>
+                <td>{{ kikolo.titulo }}</td>
+                <td>{{ kikolo.categoria }}</td>
+                <td>{{ kikolo.descricao }}</td>
+                <td>{{ kikolo.imagem }}</td>
+                <td>{{ kikolo.localizacao }}</td>
+                <td>{{ kikolo.nomeusuario }}</td>
+                <td>{{ kikolo.email }}</td>
+                <td>{{ kikolo.telefone }}</td>
+                <td>{% if kikolo.data %}{{ kikolo.data|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('kikolo_show', { 'id': kikolo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('kikolo_edit', { 'id': kikolo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('kikolo_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

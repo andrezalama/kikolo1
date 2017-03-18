@@ -1,0 +1,141 @@
+<?php
+
+namespace projecto\KikoloBundle\Entity;
+
+/**
+ * Anunciante
+ */
+class Anunciante
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $nome;
+
+    /**
+     * @var string
+     */
+    private $localizacao;
+
+    /**
+     * @var string
+     */
+    private $email;
+
+    /**
+     * @var int
+     */
+    private $telefone;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nome
+     *
+     * @param string $nome
+     *
+     * @return Anunciante
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get nome
+     *
+     * @return string
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Set localizacao
+     *
+     * @param string $localizacao
+     *
+     * @return Anunciante
+     */
+    public function setLocalizacao($localizacao)
+    {
+        $this->localizacao = $localizacao;
+
+        return $this;
+    }
+
+    /**
+     * Get localizacao
+     *
+     * @return string
+     */
+    public function getLocalizacao()
+    {
+        return $this->localizacao;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Anunciante
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set telefone
+     *
+     * @param integer $telefone
+     *
+     * @return Anunciante
+     */
+    public function setTelefone($telefone)
+    {
+        $this->telefone = $telefone;
+
+        return $this;
+    }
+
+    /**
+     * Get telefone
+     *
+     * @return int
+     */
+    public function getTelefone()
+    {
+        return $this->telefone;
+    }
+}

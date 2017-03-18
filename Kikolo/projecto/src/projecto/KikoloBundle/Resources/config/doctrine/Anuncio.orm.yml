@@ -1,0 +1,23 @@
+projecto\KikoloBundle\Entity\Anuncio:
+    type: entity
+    table: null
+    repositoryClass: projecto\KikoloBundle\Repository\AnuncioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titulo:
+            type: string
+            length: '50'
+        descricao:
+            type: string
+            length: 255
+        datacriacao:
+            type: datetime
+        tempo:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

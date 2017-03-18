@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="PedroZalama" content="">
+
+    <title>Kikolo-Classificados</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('kikolo.png') }}" />
+    {% block stylesheet %}
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ asset('css/freelancer.css') }}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% endblock %}
+</head>
+
+{% block container %}
+<body id="page-top" class="index">
+<!-- Navigation -->
+{% include "projectoKikoloBundle:Kikolo-Default:Menu-kikolo.html.twig" %}
+
+<!-- Header -->
+<div>
+<!-- Portfolio Grid Section -->
+{% block body %}
+ {% endblock %}
+</div>
+
+<!-- Footer -->
+{% include "projectoKikoloBundle:Kikolo-Default:footer-kikolo.html.twig" %}
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visible-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+<!-- Portfolio Modals -->
+{% include "projectoKikoloBundle:Kikolo-Default:Modal-kikolo.html.twig" %}
+{% block javascripts %}
+<!-- jQuery -->
+<script src="{{ asset('js/jquery.js') }}"></script>
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 100%;
+        margin: auto;
+        height: 40%;
+    }
+</style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+    <style type="text/css">
+        .bs-example{
+            margin: 150px 50px;
+        }
+        .popover-demo{
+            margin-bottom: 20px;
+        }
+    </style>
+<style>
+	/* carousel */
+.media-carousel 
+{
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+  margin-top: 30px;
+}
+/* Previous button  */
+.media-carousel .carousel-control.left 
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Next button  */
+.media-carousel .carousel-control.right 
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Changes the position of the indicators */
+.media-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -10px;
+}
+/* Changes the colour of the indicators */
+.media-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+.media-carousel1 .carousel-indicators .active 
+{
+  background: #333333;
+}
+.media-carousel1 img
+{
+  width: 250px;
+  height: 100px
+}
+.carousel-inner1 {
+    width: 100%;
+    overflow: hidden;
+    height: 150px;
+}
+	</style>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="{{ asset('js/classie.js') }}"></script>
+<script src="js/cbpAnimatedHeader.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="{{ asset('js/jqBootstrapValidation.js')}}"></script>
+<script src="{{ asset('js/contact_me.js')}}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ asset('js/freelancer.js')}}"></script>
+{% endblock javascripts %}
+</body>
+{% endblock container %}
+</html>

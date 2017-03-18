@@ -1,0 +1,10 @@
+projecto\KikoloBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: projecto\KikoloBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO

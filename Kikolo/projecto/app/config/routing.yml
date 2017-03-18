@@ -1,0 +1,8 @@
+projecto_kikolo:
+    resource: "@projectoKikoloBundle/Resources/config/routing.yml"
+    prefix:   /
+# Kikolo-cadastro-anuncio/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+

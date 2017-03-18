@@ -1,0 +1,136 @@
+{% extends "projectoKikoloBundle::Layout.html.twig" %}
+{% block body %}
+    <section id="contact" xmlns="http://www.w3.org/1999/html"></br>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 text-center"></br>
+                    <h4>Criar Anuncio</h4>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            {{ form_start(form,  {'actio': {'new': 'POST'}}) }}
+            <div class="row">
+                <hr>
+                <div class="col-md-7">
+
+                 <div class="form-horizontal">
+                  <div class="jumbotron col-lg-12">
+                      <h4>Informações Anuncio</h4>
+                      <hr>
+
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="validate-titulo">{{'Titulo'|trans }}</label>
+                      <div class="col-sm-9" data-validate="titulo">
+                         {{form_widget(form.titulo, {'attr':{'class': 'form-control', 'name': 'validate-email','id':'validate-email','placeholder':'titulo'|trans
+                         }}  ) }}
+                          <small class="help-block">O tamanho não pode ser maior que 20.</small>
+                     </div>
+                     </div>
+
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label " for="validate-select">{{'Tipo anuncio'|trans }}</label>
+                          <div class="col-sm-3" data-validate="tipoanuncio">
+                              {{form_widget(form.tipoanuncio, {'attr':{'class': 'form-control', 'name': 'validate-select','id':'validate-select','placeholder':'Seleccione uma Categoria'|trans }}  ) }}
+                          </div>
+                      </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="validate-select">{{'Categoria'|trans }}</label>
+                        <div class="col-sm-9" data-validate="categoria">
+                            {{form_widget(form.categoria, {'attr':{'class': 'form-control', 'name': 'validate-select','id':'validate-select','placeholder':'Seleccione uma Categoria'|trans }}  ) }}
+                        </div>
+                    </div>
+
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="validate-select">{{'Preço'|trans }}</label>
+                          <div class="col-sm-4" data-validate="preco">
+                              {{form_widget(form.preco, {'attr':{'class': 'form-control', 'name': 'validate-select','id':'validate-select' }}  ) }}
+                          </div>
+
+                          <label class="control-label col-sm-3" for="validate-select">{{'Negociavel'|trans }}</label>
+                          <div class="col-sm-2">
+                          <div class="checkbox" data-validate="negociavel">
+                              {{form_widget(form.negociavel, {'attr':{'class': 'form-group', 'name': 'validate-select','id':'validate-select','placeholder':'Seleccione uma Categoria'|trans }}  ) }}
+                          </div>
+                          </div>
+
+                          </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="validate-select">{{'Descrição'|trans }}</label>
+                        <div class="col-sm-9" data-validate="categoria">
+                            {{form_widget(form.descricao, {'attr':{'class': 'form-control', 'name': 'validate-descricao','id':'validate-descricao'}}  ) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="validate-select">{{'Imagem'|trans }}</label>
+                        <div class="col-sm-9" data-validate="upload">
+                            {{form_widget(form.upload, {'attr':{'class': 'form-control', 'name': 'validate-upload','id':'validate-upload'}}  ) }}
+                            <small class="help-block">Carregue ate 5 imagens e o tamanho nao pode ser superiro a 2MB.</small>
+                        </div>
+                    </div>
+
+                    <hr>
+                      <h4>Informações Usuario</h4>
+                    <hr>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="validate-select">{{'Usuario'|trans }}</label>
+                        <div class="col-sm-9" data-validate="nomeusuario">
+                            {{form_widget(form.nomeusuario, {'attr':{'class': 'form-control', 'name': 'validate-nomeusuario','id':'validate-nomeusuario'}}  ) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="validate-select">{{'Email'|trans }}</label>
+                        <div class="col-sm-9" data-validate="email">
+                            {{form_widget(form.email, {'attr':{'class': 'form-control', 'name': 'validate-email','id':'validate-email'}}  ) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="validate-select">{{'Localização'|trans }}</label>
+                        <div class="col-sm-9" data-validate="localizacao">
+                            {{form_widget(form.localizacao, {'attr':{'class': 'form-control', 'name': 'validate-localizacao','id':'validate-localizacao'}}  ) }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="validate-select">{{'Telefone'|trans }}</label>
+                        <div class="col-sm-9" data-validate="upload">
+                            {{form_widget(form.telefone, {'attr':{'class': 'form-control', 'name': 'validate-telefone','id':'validate-telefone'}}  ) }}
+                        </div>
+                    </div>
+
+                    </div>
+
+                    <div class="form-group"></br>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Criar</button>
+                            <button type="reset" class="btn btn-danger">Limpar</button>
+                        </div>
+                    </div>
+
+                   </div>
+                </div>
+                <div class="col-md-offset-8">
+                    <div class="jumbotron col-lg-10">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                Dicas do Kikolo
+                            </a>
+                            <a href="#" class="list-group-item">Usa um curto titulo e uma descrição para o seu anuncio</a>
+                            <a href="#" class="list-group-item">Seleccione a categoria certa para o seu anuncio</a>
+                            <a href="#" class="list-group-item">Carrega ate 5 fotos para o seu anuncio receber muitas vizualizações</a>
+                            <a href="#" class="list-group-item">Verifique os seus dados antes de publicar o seu anuncio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form)}}
+        </div>
+    </section>
+{% endblock %}

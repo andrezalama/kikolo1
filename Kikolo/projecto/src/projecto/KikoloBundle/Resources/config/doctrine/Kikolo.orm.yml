@@ -1,0 +1,52 @@
+projecto\KikoloBundle\Entity\Kikolo:
+    type: entity
+    table: null
+    repositoryClass: projecto\KikoloBundle\Repository\KikoloRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titulo:
+            type: string
+            length: 255
+        categoria:
+            type: string
+            length: 255
+        descricao:
+            type: string
+            length: 255
+            nullable: true
+            column: Descricao
+        path:
+            type: string
+            maxSize: 6000000
+        localizacao:
+            type: string
+            length: 255
+        nomeusuario:
+            type: string
+            length: '100'
+            nullable: true
+        email:
+            type: string
+            length: '30'
+            unique: true
+        telefone:
+            type: string
+            length: '30'
+        data:
+            type: datetime
+        tipoanuncio:
+            type: string
+            length: '20'
+            nullable: true
+        negociavel:
+            type: string
+            length: '10'
+            nullable: true
+        preco:
+            type: integer
+    lifecycleCallbacks: {  }

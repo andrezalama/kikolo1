@@ -1,0 +1,15 @@
+projecto\KikoloBundle\Entity\Subcategoria:
+    type: entity
+    table: null
+    repositoryClass: projecto\KikoloBundle\Repository\SubcategoriaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nome:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

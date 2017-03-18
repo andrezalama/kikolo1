@@ -1,0 +1,468 @@
+<?php
+
+namespace projecto\KikoloBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+
+/**
+ * Kikolo-anuncio
+ */
+class Kikolo
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $titulo;
+
+    /**
+     * @var string
+     */
+    private $categoria;
+
+    /**
+     * @var string
+     */
+    private $descricao;
+	
+    /**
+     *
+     * @Assert\File(maxSize="6000000")
+     */
+
+    private $upload;
+
+    /**
+     * @var string
+     */
+    private $localizacao;
+
+    /**
+     * @var string
+     */
+    private $nomeusuario;
+
+    /**
+     * @var string
+     */
+    private $email;
+
+    /**
+     * @var string
+     */
+    private $telefone;
+    
+    /**
+     * @var \DateTime
+     */
+    private $data;
+
+    /**
+     * @var \integer
+     */
+    private $preco;
+
+    /**
+     * @var \string
+     */
+    private $negociavel;
+
+    /**
+     * @var \string
+     */
+    private $tipoanuncio;
+
+    /**
+     * @var string
+     */
+    public $path;
+
+    public function getAbsolutePath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadRootDir().'/'.$this->path;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadDir().'/'.$this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded
+        // documents should be saved
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw up
+        // when displaying uploaded doc/image in the view.
+        return 'uploads';
+    }
+
+
+    public function __construct()
+    {
+        $this->data =  new \DateTime;
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titulo
+     *
+     * @param string $titulo
+     *
+     * @return Kikolo
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get titulo
+     *
+     * @return string
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    /**
+     * Set categoria
+     *
+     * @param string $categoria
+     *
+     * @return Kikolo
+     */
+    public function setCategoria($categoria)
+    {
+        $this->categoria = $categoria;
+
+        return $this;
+    }
+
+    /**
+     * Get categoria
+     *
+     * @return string
+     */
+    public function getCategoria()
+    {
+        return $this->categoria;
+    }
+
+    /**
+     * Set descricao
+     *
+     * @param string $descricao
+     *
+     * @return Kikolo
+     */
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get descricao
+     *
+     * @return string
+     */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * Set upload
+     *
+     * @param UploadedFile $upload
+     *
+     * @return Kikolo
+     */
+    public function setUpload(UploadedFile $upload = null)
+    {
+        $this->upload = $upload;
+
+        return $this;
+    }
+
+    /**
+     * Get upload
+     *
+     * @return UploadedFile
+     */
+    public function getUpload()
+    {
+        return $this->upload;
+    }
+
+    /**
+     * Set localizacao
+     *
+     * @param string $localizacao
+     *
+     * @return Kikolo
+     */
+    public function setLocalizacao($localizacao)
+    {
+        $this->localizacao = $localizacao;
+
+        return $this;
+    }
+
+    /**
+     * Get localizacao
+     *
+     * @return string
+     */
+    public function getLocalizacao()
+    {
+        return $this->localizacao;
+    }
+
+    /**
+     * Set nomeusuario
+     *
+     * @param string $nomeusuario
+     *
+     * @return Kikolo
+     */
+    public function setNomeusuario($nomeusuario)
+    {
+        $this->nomeusuario = $nomeusuario;
+
+        return $this;
+    }
+
+    /**
+     * Get nomeusuario
+     *
+     * @return string
+     */
+    public function getNomeusuario()
+    {
+        return $this->nomeusuario;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Kikolo
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set telefone
+     *
+     * @param string $telefone
+     *
+     * @return Kikolo
+     */
+    public function setTelefone($telefone)
+    {
+        $this->telefone = $telefone;
+
+        return $this;
+    }
+
+    /**
+     * Get telefone
+     *
+     * @return string
+     */
+    public function getTelefone()
+    {
+        return $this->telefone;
+    }
+   
+    /**
+     * Set data
+     *
+     * @param \DateTime $data
+     *
+     * @return Kikolo
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    /**
+     * Get data
+     *
+     * @return \DateTime
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    public function upload()
+    {
+        // the file property can be empty if the field is not required
+        if (null === $this->getUpload()) {
+            return;
+        }
+
+        // use the original file name here but you should
+        // sanitize it at least to avoid any security issues
+
+        // move takes the target directory and then the
+        // target filename to move to
+        $this->getUpload()->move(
+            $this->getUploadRootDir(),
+            $this->getUpload()->getClientOriginalName()
+        );
+
+        // set the path property to the filename where you've saved the file
+        $this->path = $this->getUpload()->getClientOriginalName();
+
+        // clean up the file property as you won't need it anymore
+        $this->upload = null;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return Kikolo
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set tipoanuncio
+     *
+     * @param string $tipoanuncio
+     *
+     * @return Kikolo
+     */
+    public function setTipoanuncio($tipoanuncio)
+    {
+        $this->tipoanuncio = $tipoanuncio;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoanuncio
+     *
+     * @return string
+     */
+    public function getTipoanuncio()
+    {
+        return $this->tipoanuncio;
+    }
+
+    /**
+     * Set negociavel
+     *
+     * @param string $negociavel
+     *
+     * @return Kikolo
+     */
+    public function setNegociavel($negociavel)
+    {
+        $this->negociavel = $negociavel;
+
+        return $this;
+    }
+
+    /**
+     * Get negociavel
+     *
+     * @return string
+     */
+    public function getNegociavel()
+    {
+        return $this->negociavel;
+    }
+
+
+
+    /**
+     * Set preco
+     *
+     * @param integer $preco
+     *
+     * @return Kikolo
+     */
+    public function setPreco($preco)
+    {
+        $this->preco = $preco;
+
+        return $this;
+    }
+
+    /**
+     * Get preco
+     *
+     * @return integer
+     */
+    public function getPreco()
+    {
+        return $this->preco;
+    }
+}

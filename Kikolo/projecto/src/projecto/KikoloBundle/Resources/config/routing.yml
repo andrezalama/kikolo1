@@ -1,0 +1,20 @@
+projecto_kikolo_anuncio:
+    resource: "@projectoKikoloBundle/Resources/config/routing/anuncio.yml"
+    prefix:   /anuncio
+kikoloshow:
+    path:     /{id}/kikoloshow
+    defaults: { _controller: "projectoKikoloBundle:Default:kikoloshow" }
+    methods:  GET
+projecto_kikolo_homepage:
+    path:     /kikolo
+    defaults: { _controller: projectoKikoloBundle:Default:kikolo }
+projecto_portofolio:
+        path:     /portofolio
+        defaults: { _controller: projectoKikoloBundle:Kikolo:portofolio }
+projecto_anuncio:
+        path:     /anuncio
+        defaults: { _controller: projectoKikoloBundle:Kikolo-anuncio:anuncio }
+projecto_new:
+    path:     /new
+    defaults: { _controller: "projectoKikoloBundle:Kikolo:new" }
+    methods:  [GET, POST]

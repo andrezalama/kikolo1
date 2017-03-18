@@ -1,0 +1,154 @@
+{% extends "projectoKikoloBundle::Layout.html.twig" %}
+{% block body %}
+<section id="contact"></br>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-center"></br>
+                <h2>Criar Anuncio</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+      {{ form_start(form,  {'actio': {'new': 'POST'}}) }}
+        <div class="row">
+            <div class="col-lg-7 col-lg-offset-1">
+                 <h4>Informações Anuncio</h4>
+                <hr>
+                {% set class ="" %}
+                {% if not form.titulo.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group" {{ class }}>
+                    <label  class="control-label col-sm-2" for="{{ form.titulo.vars.id }}">Titulo</label>
+                <div class="col-sm-10">
+                     <input type="text" class="form-control" id="{{ form.titulo.vars.id }}" name="{{ form.titulo.vars.full_name }}" value="{{ form.titulo.vars.value }}" >
+                </div>
+                    {% do form.titulo.setRendered %}
+                    {%  if not form.titulo.vars.errors %}
+                        {% for error in form.titulo.vars.erros %}
+                            <span class="help-block">{{ error.message }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                {% set class ="" %}
+                {% if not form.categoria.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group"{{ class }}>
+                    <label  class="control-label col-sm-2" for="{{ form.categoria.vars.id }}">Categoria</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="{{ form.categoria.vars.id }}" name="{{ form.categoria.vars.full_name }}" value="{{ form.categoria.vars.value }}">
+                </div>
+                    {% do form.categoria.setRendered %}
+                    {%  if not form.categoria.vars.errors %}
+                        {% for error in form.categoria.vars.erros %}
+                            <span class="help-block">{{ error.message }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                {% set class ="" %}
+                {% if not form.descricao.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group">
+                    <label  class="control-label col-sm-2" for="{{ form.descricao.vars.id }}">Descrição</label>
+                <div class="col-sm-10">
+                    <textarea rows="3" type="text" class="form-control" id="{{ form.descricao.vars.id }}" name="{{ form.descricao.vars.full_name }}" value="{{ form.descricao.vars.value }}"></textarea>
+                    {{ form_errors(form.descricao) }}
+                    {% do form.descricao.setRendered %}
+                </div>
+                </div>
+
+                {% set class ="" %}
+                {% if not form.imagem.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group">
+                    <label  class="control-label col-sm-2" for="{{ form.imagem.vars.id }}">Imagem</label>
+                <div class="col-sm-10">
+                    <input type="file" class="form-control" id="{{ form.imagem.vars.id }}" name="{{ form.imagem.vars.full_name }}" value="{{ form.imagem.vars.value }}"  >
+                    <input type="file" class="form-control" id="{{ form.imagem.vars.id }}" name="{{ form.imagem.vars.full_name }}" value="{{ form.imagem.vars.value }}">
+                    <input type="file" class="form-control" id="{{ form.imagem.vars.id }}" name="{{ form.imagem.vars.full_name }}" value="{{ form.imagem.vars.value }}">
+                    {{ form_errors(form.imagem) }}
+                    {% do form.imagem.setRendered %}
+                </div>
+                </div>
+                
+                <h4>Informações Usuario</h4>
+                <hr>
+                {% set class ="" %}
+                {% if not form.nomeusuario.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group">
+                    <label  class="control-label col-sm-2" for="{{ form.nomeusuario.vars.id }}">Nome</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="{{ form.nomeusuario.vars.id }}" name="{{ form.nomeusuario.vars.full_name }}" value="{{ form.nomeusuario.vars.value }}">
+                    {{ form_errors(form.nomeusuario) }}
+                    {% do form.nomeusuario.setRendered %}
+                </div>
+                </div>
+
+                {% set class ="" %}
+                {% if not form.localizacao.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="{{ form.localizacao.vars.id }}">Localização</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="{{ form.localizacao.vars.id }}" name="{{ form.localizacao.vars.full_name }}" value="{{ form.localizacao.vars.value }}">
+                    {{ form_errors(form.localizacao) }}
+                    {% do form.localizacao.setRendered %}
+                </div>
+                </div>
+
+                {% set class ="" %}
+                {% if not form.telefone.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group">
+                    <label  class="control-label col-sm-2" for="{{ form.telefone.vars.id }}">Telefone</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="{{ form.telefone.vars.id }}" name="{{ form.telefone.vars.full_name }}" value="{{ form.telefone.vars.value }}">
+                    {{ form_errors(form.telefone) }}
+                    {% do form.telefone.setRendered %}
+                </div>
+                </div>
+                {% set class ="" %}
+                {% if not form.email.vars.valid %}
+                    {% set class="has-error" %}
+                {% endif %}
+                <div class="form-group">
+                    <label  class="control-label col-sm-2" for="{{ form.email.vars.id }}">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="{{ form.email.vars.id }}" name="{{ form.email.vars.full_name }}" value="{{ form.email.vars.value }}">
+                    {{ form_errors(form.email) }}
+                    {% do form.email.setRendered %}
+                </div>
+                </div>
+                <h4>Termos e Condições</h4>
+                <hr>
+                    <div class="form-group">
+                        <label  class="control-control col-sm-2" for="">Legal</label>
+                        <div class="col-sm-10">
+                    <input type="checkbox" name="terms-and-conditions" required data-validation-required-message="You must agree to the terms and conditions"
+                    >
+                </div></div>
+                <hr>
+                <div class="form-group"></br>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Criar</button>
+                        <button type="reset" class="btn btn-danger">Limpar</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+      {{ form_end(form)}}
+    </div>
+</section>
+{% endblock %}

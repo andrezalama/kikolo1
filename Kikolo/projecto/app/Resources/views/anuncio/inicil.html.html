@@ -1,0 +1,43 @@
+{% block body %}
+    <h1>Anuncio list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Descricao</th>
+                <th>Datacriacao</th>
+                <th>Tempo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for anuncio in anuncios %}
+            <tr>
+                <td><a href="{{ path('anuncio_show', { 'id': anuncio.id }) }}">{{ anuncio.id }}</a></td>
+                <td>{{ anuncio.titulo }}</td>
+                <td>{{ anuncio.descricao }}</td>
+                <td>{% if anuncio.datacriacao %}{{ anuncio.datacriacao|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ anuncio.tempo }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('anuncio_show', { 'id': anuncio.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('anuncio_edit', { 'id': anuncio.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('anuncio_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

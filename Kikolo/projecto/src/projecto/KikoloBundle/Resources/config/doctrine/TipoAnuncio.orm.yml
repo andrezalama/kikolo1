@@ -1,0 +1,15 @@
+projecto\KikoloBundle\Entity\TipoAnuncio:
+    type: entity
+    table: null
+    repositoryClass: projecto\KikoloBundle\Repository\TipoAnuncioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tipo:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,68 @@
+<title>{% block title %}Welcome!{% endblock %}</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<section id="portfolio" ></br>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h3>Kikolo-Online</h3>
+                <hr class="">
+            </div>
+        </div>
+        <div class="jumbotron col-lg-12">
+        <div class="row">
+
+            {% for entity in entities %}
+            <div class="col-sm-2 portfolio-item">
+
+              <div class="thumbnail">
+                  <a href="{{ path('kikoloshow', { 'id': entity.id }) }}">
+
+                    <img src="{{ asset('Uploads/'~entity.path) }}" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                   <a href="#"><h7>{{ entity.titulo }}</h7></a>
+                    <h6 class="text-muted"> {{ entity.preco }} AKZ</h6>
+                </div>
+
+            </div>
+            </div>
+
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+	
+        <!-- Pagination -->
+        <div class="row text-center">
+
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        <!-- /.row -->
+	<hr>
+
+</section>

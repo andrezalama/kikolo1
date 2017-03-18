@@ -1,0 +1,24 @@
+projecto\KikoloBundle\Entity\Anunciante:
+    type: entity
+    table: null
+    repositoryClass: projecto\KikoloBundle\Repository\AnuncianteRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nome:
+            type: string
+            length: 255
+        localizacao:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: '25'
+            unique: true
+        telefone:
+            type: integer
+    lifecycleCallbacks: {  }
